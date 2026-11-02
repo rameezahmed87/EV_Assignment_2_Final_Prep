@@ -1,0 +1,310 @@
+
+@font-face {
+    font-family: 'singsong';
+    src: url('../assets/fonts/singsong-webfont.woff2') format('woff2'),
+         url('../assets/fonts/singsong-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background: #444;
+  color: #fff;
+  font-size: 1.6em;
+}
+#logo {
+  width: 130px;
+  position: fixed;
+  z-index: 13;
+  top: 25px;
+  left: 33px;
+}
+#hamburger {
+  width: 80px;
+  height: 70px;
+  position: fixed;
+  z-index: 33;
+  top: 25px;
+  right: 33px;
+  cursor: pointer;
+}
+  .bar {
+    width: 80px;
+    height: 16px;
+    margin: 4px 0;
+    border-radius: 4px;
+    background: #000;
+  }
+nav {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  z-index: 21;
+  background: #aaa;
+  border-left: 1px solid #222;
+  top: 0;
+  right: -300px;
+  padding-top: 150px;
+  padding-left: 42px;
+  font-family: "Fascinate", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.7em;
+}
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #098a4c;
+  }
+#topBtn {
+  width: 60px;
+  height: 50px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+  position: fixed;
+  font-weight: 900;
+  font-size: 2em;
+  z-index: 29;
+  bottom: 0;
+  right: 67px;
+  cursor: pointer;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top: 1px solid #444;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  font-family: "Fascinate", system-ui;
+}
+
+/*======================*/
+/*====== GRID CODE =====*/
+#grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(300px, auto);
+  grid-template-areas: 
+    "hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr"
+    "abt abt abt abt skl skl skl skl skl skl skl skl"
+    "wrk wrk wrk wrk wrk wrk con con con con con con"
+    "ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr";
+}
+header {
+  display: grid;
+  grid-area: hdr;
+  width: 100%;
+  height: 700px;
+  background: url('../assets/images/headerBkg1.png');
+  background-size: cover;
+  background-position-y: -100px;
+}
+#about {
+  display: grid;
+  grid-area: abt;
+  width: 100%;
+  background: #c49191;
+  border-top: 1px solid #222;
+  padding: 25px 45px;
+  color: #333;
+}
+  #about > p {
+    margin: 15px 0;
+  }
+  #ownerPic {
+    width: 80%;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 6px solid #fff;
+    box-shadow: 3px 3px 7px #333;
+  }
+#skills {
+  display: grid;
+  grid-area: skl;
+  width: 100%;
+  background: #c316ef;
+  border-top: 1px solid #222;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 25px 45px;
+  align-items: center;
+  justify-items: center;
+}
+  #skills > i {
+    font-size: 5.8em;
+  }
+#work {
+  display: grid;
+  grid-area: wrk;
+  width: 100%;
+  background: #999;
+  border-top: 1px solid #222;
+  padding: 25px 45px;
+  color: #333;
+  grid-template-columns: repeat(2, 1fr);
+}
+  .workCard {
+    width: 80%;
+    min-height: 500px;
+    background: #fff;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 3px 3px 7px #333;
+    padding: 15px 25px;
+    border: 3px solid #333;
+    text-align: center;
+  }
+    .workCard > h2 {
+      position: sticky;
+      top: 450px;
+      background: rgba(33, 33, 33, .83);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+    }
+    .workCard > img {
+      width: 100%;
+    }
+    .workCard:nth-child(1) {
+      background: url("../assets/images/hairstyle1.png");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .workCard:nth-child(2) {
+      background: url("../assets/images/hairstyle2.png");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .workCard:nth-child(3) {
+      background: url("../assets/images/hairstyle3.png");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .workCard:nth-child(4) {
+      background: url("../assets/images/hairstyle4.png");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+#contact {
+  display: grid;
+  grid-area: con;
+  width: 100%;
+  background: #333;
+  border-top: 1px solid #222;
+  padding: 25px 45px;
+}
+  .contactForm {
+    width: 90%;
+    max-width: 600px;
+    max-height: 833px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #e247a9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+  }
+  .contactForm h2 {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .contactForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  .contactForm input,
+  .contactForm select,
+  .contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  .contactForm textarea {
+    resize: vertical;
+  }
+  .contactForm button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #8d4f62;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .contactForm button:hover {
+    background: #6f3d4d;
+  }
+footer {
+  display: grid;
+  grid-area: ftr;
+  width: 100%;
+  background: #777;
+  border-top: 1px solid #222;
+  padding: 25px 45px;
+  font-style: italic;
+  color: #fff;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+  footer > div:nth-child(2) {
+    text-align: center;
+  }
+  footer > div:nth-child(3) {
+    text-align: right;
+  }
+
+/*======================================*/
+/*========== MEDIA QUERIES ============*/
+@media screen and (max-width: 1440px) {
+  header {
+    background-position-y: 0;
+  }
+  #ownerPic {
+    width: 100%;
+    margin: 15px auto;
+    border: 3px solid #fff;
+  }
+  #skills > i {
+    font-size: 4.2em;
+  }
+  .workCard {
+    width: 96%;
+    padding: 5px 10px;
+    margin: 1% 2%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  #grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+      "hdr hdr hdr hdr hdr hdr"
+      "abt abt abt abt abt abt"
+      "skl skl skl skl skl skl"
+      "wrk wrk wrk wrk wrk wrk"
+      "con con con con con con"
+      "ftr ftr ftr ftr ftr ftr";
+  }
+  #skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+    #skills > i {
+      font-size: 3em;
+    }
+}
