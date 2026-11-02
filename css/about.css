@@ -62,3 +62,6 @@ h1 em, h2 em { color: var(--rose-dark); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto; transition-duration: .01ms; }
 }
+nav a, .site-header nav a, .footer-links a { transition: color .2s ease, opacity .2s ease; }
+nav a:focus-visible, .site-header nav a:focus-visible, .footer-links a:focus-visible, .brand:focus-visible { outline: 2px solid var(--rose-dark); outline-offset: 5px; border-radius: 2px; }
+nav a[aria-current="page"], .site-header nav a[aria-current="page"] { color: var(--rose-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
