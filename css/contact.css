@@ -1,0 +1,41 @@
+:root {
+  --ink: #302923;
+  --muted: #746b63;
+  --paper: #f8f5ef;
+  --rose: #b77e70;
+  --rose-dark: #86564b;
+  --line: #d9cec3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", Arial, sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 10; padding: .7rem 1rem; background: var(--ink); color: white; }
+.skip-link:focus { top: 1rem; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 1.5rem clamp(1.25rem, 7vw, 7rem); border-bottom: 1px solid var(--line); }
+.wordmark { font-family: "Playfair Display", Georgia, serif; font-size: 1.65rem; font-weight: 600; }
+.wordmark span { color: var(--rose); }
+nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+nav a { font-size: .9rem; }
+nav a[aria-current="page"] { color: var(--rose-dark); text-decoration: underline; text-underline-offset: 6px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--rose-dark); outline-offset: 4px; }
+.contact-hero { padding: clamp(4rem, 10vw, 8rem) clamp(1.25rem, 12vw, 12rem) 4rem; background: #e9ded2; }
+.eyebrow { color: var(--rose-dark); font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; line-height: 1.12; }
+h1 { max-width: 800px; margin: 1rem 0; font-size: clamp(2.8rem, 7vw, 5.8rem); }
+h1 em, h2 em { color: var(--rose-dark); }
+.contact-hero > p:last-child { max-width: 560px; color: var(--muted); }
+.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 8vw, 8rem); padding: 5rem clamp(1.25rem, 12vw, 12rem); }
+.contact-details h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.contact-details > p:not(.eyebrow) { color: var(--muted); }
+.detail-link { display: inline-block; margin-top: 1.5rem; color: var(--rose-dark); font-weight: 700; }
+.contact-form { display: grid; gap: .6rem; padding: clamp(1.5rem, 4vw, 3rem); background: white; box-shadow: 0 15px 45px #32271c12; }
+.contact-form label { margin-top: .65rem; font-size: .9rem; font-weight: 700; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: .9rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--ink); font: inherit; }
+.contact-form textarea { resize: vertical; }
+.button { justify-self: start; margin-top: 1rem; padding: .9rem 1.4rem; border: 0; background: var(--ink); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.form-note { color: var(--muted); font-size: .8rem; }
+.site-footer { padding: 2.5rem clamp(1.25rem, 7vw, 7rem); background: var(--ink); color: var(--paper); }
+.site-footer p, .site-footer small { color: #c7c0b6; }
+@media (max-width: 760px) { .site-header { align-items: flex-start; flex-direction: column; } nav { gap: .8rem 1.2rem; } .contact-layout { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
