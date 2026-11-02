@@ -1,24 +1,20 @@
-
 let menuOpen = false;
 
 function toggleMenu() {
-  if(!menuOpen) { // open the menu
-    $('nav').animate({
-      right: 0
-    }, 300, 'swing');
+  const nextState = !menuOpen;
+
+  if (nextState) {
+    $('nav').animate({ right: 0 }, 300, 'swing');
+  } else {
+    $('nav').animate({ right: -320 }, 240, 'swing');
   }
-  else { // close the menu
-    $('nav').animate({
-      right: -300
-    }, 240, 'swing');
-  }
-  // toggle the menu state
-  menuOpen = !menuOpen;
-} // toggleMenu()
+
+  menuOpen = nextState;
+  document.getElementById('hamburger')?.setAttribute('aria-expanded', String(menuOpen));
+}
 
 function closeMenu() {
-  $('nav').animate({
-    right: -300
-  }, 240, 'swing');
+  $('nav').animate({ right: -320 }, 240, 'swing');
   menuOpen = false;
-} // closeMenu()
+  document.getElementById('hamburger')?.setAttribute('aria-expanded', 'false');
+}
