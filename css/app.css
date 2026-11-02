@@ -1,310 +1,82 @@
-
-@font-face {
-    font-family: 'singsong';
-    src: url('../assets/fonts/singsong-webfont.woff2') format('woff2'),
-         url('../assets/fonts/singsong-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+:root {
+  --ink: #24231f;
+  --muted: #716d64;
+  --cream: #f7f4ed;
+  --paper: #fffdf8;
+  --rose: #c58f82;
+  --rose-dark: #875d55;
+  --line: rgba(36, 35, 31, .14);
 }
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-body {
-  background: #444;
-  color: #fff;
-  font-size: 1.6em;
-}
-#logo {
-  width: 130px;
-  position: fixed;
-  z-index: 13;
-  top: 25px;
-  left: 33px;
-}
-#hamburger {
-  width: 80px;
-  height: 70px;
-  position: fixed;
-  z-index: 33;
-  top: 25px;
-  right: 33px;
-  cursor: pointer;
-}
-  .bar {
-    width: 80px;
-    height: 16px;
-    margin: 4px 0;
-    border-radius: 4px;
-    background: #000;
-  }
-nav {
-  width: 300px;
-  height: 100vh;
-  position: fixed;
-  z-index: 21;
-  background: #aaa;
-  border-left: 1px solid #222;
-  top: 0;
-  right: -300px;
-  padding-top: 150px;
-  padding-left: 42px;
-  font-family: "Fascinate", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.7em;
-}
-  a {
-    text-decoration: none;
-    color: #222;
-  }
-  a:hover {
-    text-decoration: underline;
-    color: #098a4c;
-  }
-#topBtn {
-  width: 60px;
-  height: 50px;
-  background: #fff;
-  color: #333;
-  text-align: center;
-  position: fixed;
-  font-weight: 900;
-  font-size: 2em;
-  z-index: 29;
-  bottom: 0;
-  right: 67px;
-  cursor: pointer;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-top: 1px solid #444;
-  border-left: 1px solid #444;
-  border-right: 1px solid #444;
-  font-family: "Fascinate", system-ui;
-}
-
-/*======================*/
-/*====== GRID CODE =====*/
-#grid {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(300px, auto);
-  grid-template-areas: 
-    "hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr hdr"
-    "abt abt abt abt skl skl skl skl skl skl skl skl"
-    "wrk wrk wrk wrk wrk wrk con con con con con con"
-    "ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr ftr";
-}
-header {
-  display: grid;
-  grid-area: hdr;
-  width: 100%;
-  height: 700px;
-  background: url('../assets/images/headerBkg1.png');
-  background-size: cover;
-  background-position-y: -100px;
-}
-#about {
-  display: grid;
-  grid-area: abt;
-  width: 100%;
-  background: #c49191;
-  border-top: 1px solid #222;
-  padding: 25px 45px;
-  color: #333;
-}
-  #about > p {
-    margin: 15px 0;
-  }
-  #ownerPic {
-    width: 80%;
-    border-radius: 50%;
-    margin: 20px auto;
-    border: 6px solid #fff;
-    box-shadow: 3px 3px 7px #333;
-  }
-#skills {
-  display: grid;
-  grid-area: skl;
-  width: 100%;
-  background: #c316ef;
-  border-top: 1px solid #222;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 25px 45px;
-  align-items: center;
-  justify-items: center;
-}
-  #skills > i {
-    font-size: 5.8em;
-  }
-#work {
-  display: grid;
-  grid-area: wrk;
-  width: 100%;
-  background: #999;
-  border-top: 1px solid #222;
-  padding: 25px 45px;
-  color: #333;
-  grid-template-columns: repeat(2, 1fr);
-}
-  .workCard {
-    width: 80%;
-    min-height: 500px;
-    background: #fff;
-    margin: 10px auto;
-    border-radius: 8px;
-    box-shadow: 3px 3px 7px #333;
-    padding: 15px 25px;
-    border: 3px solid #333;
-    text-align: center;
-  }
-    .workCard > h2 {
-      position: sticky;
-      top: 450px;
-      background: rgba(33, 33, 33, .83);
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 8px;
-    }
-    .workCard > img {
-      width: 100%;
-    }
-    .workCard:nth-child(1) {
-      background: url("../assets/images/hairstyle1.png");
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-    .workCard:nth-child(2) {
-      background: url("../assets/images/hairstyle2.png");
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-    .workCard:nth-child(3) {
-      background: url("../assets/images/hairstyle3.png");
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-    .workCard:nth-child(4) {
-      background: url("../assets/images/hairstyle4.png");
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-    }
-#contact {
-  display: grid;
-  grid-area: con;
-  width: 100%;
-  background: #333;
-  border-top: 1px solid #222;
-  padding: 25px 45px;
-}
-  .contactForm {
-    width: 90%;
-    max-width: 600px;
-    max-height: 833px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #e247a9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    font-family: Arial, sans-serif;
-  }
-  .contactForm h2 {
-    margin-bottom: 25px;
-    text-align: center;
-  }
-  .contactForm label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    font-weight: bold;
-  }
-  .contactForm input,
-  .contactForm select,
-  .contactForm textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  .contactForm textarea {
-    resize: vertical;
-  }
-  .contactForm button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    background: #8d4f62;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  .contactForm button:hover {
-    background: #6f3d4d;
-  }
-footer {
-  display: grid;
-  grid-area: ftr;
-  width: 100%;
-  background: #777;
-  border-top: 1px solid #222;
-  padding: 25px 45px;
-  font-style: italic;
-  color: #fff;
-  grid-template-columns: 1fr 5fr 1fr;
-}
-  footer > div:nth-child(2) {
-    text-align: center;
-  }
-  footer > div:nth-child(3) {
-    text-align: right;
-  }
-
-/*======================================*/
-/*========== MEDIA QUERIES ============*/
-@media screen and (max-width: 1440px) {
-  header {
-    background-position-y: 0;
-  }
-  #ownerPic {
-    width: 100%;
-    margin: 15px auto;
-    border: 3px solid #fff;
-  }
-  #skills > i {
-    font-size: 4.2em;
-  }
-  .workCard {
-    width: 96%;
-    padding: 5px 10px;
-    margin: 1% 2%;
-  }
-}
-@media screen and (max-width: 1050px) {
-  #grid {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: 
-      "hdr hdr hdr hdr hdr hdr"
-      "abt abt abt abt abt abt"
-      "skl skl skl skl skl skl"
-      "wrk wrk wrk wrk wrk wrk"
-      "con con con con con con"
-      "ftr ftr ftr ftr ftr ftr";
-  }
-  #skills {
-    grid-template-columns: repeat(3, 1fr);
-  }
-    #skills > i {
-      font-size: 3em;
-    }
-}
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: "DM Sans", Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--rose-dark); }
+button, input, select, textarea { font: inherit; }
+.skip-link { position: absolute; left: -9999px; top: 1rem; z-index: 100; padding: .7rem 1rem; background: white; }
+.skip-link:focus { left: 1rem; }
+.brand { position: absolute; z-index: 30; top: 22px; left: clamp(20px, 5vw, 72px); }
+#logo { width: 104px; max-height: 76px; object-fit: contain; }
+#hamburger { position: fixed; z-index: 40; top: 25px; right: clamp(20px, 5vw, 72px); width: 52px; height: 48px; padding: 10px; border: 0; border-radius: 50%; background: var(--paper); box-shadow: 0 4px 18px #00000018; cursor: pointer; }
+.bar { display: block; height: 2px; width: 25px; margin: 5px auto; border-radius: 3px; background: var(--ink); }
+nav { position: fixed; z-index: 35; top: 0; right: -320px; display: flex; flex-direction: column; gap: 1.2rem; width: min(320px, 85vw); height: 100vh; padding: 115px 42px 40px; background: var(--paper); box-shadow: -8px 0 35px #00000018; transition: right .28s ease; }
+nav a { font-family: "Playfair Display", Georgia, serif; font-size: 1.6rem; }
+nav.open { right: 0; }
+#grid { display: grid; width: 100%; grid-template-columns: repeat(12, 1fr); grid-template-areas: "hero hero hero hero hero hero hero hero hero hero hero hero" "about about about about about about about about about about about about" "services services services services services services services services services services services services" "work work work work work work work work work work work work" "contact contact contact contact contact contact contact contact contact contact contact contact" "footer footer footer footer footer footer footer footer footer footer footer footer"; }
+.hero { grid-area: hero; min-height: min(780px, 94vh); display: flex; flex-direction: column; justify-content: center; position: relative; padding: 150px clamp(24px, 11vw, 160px) 95px; color: white; background: linear-gradient(90deg, rgba(28,25,23,.72), rgba(28,25,23,.12)), url('../assets/images/headerBkg1.png') center/cover no-repeat; }
+.hero-content { max-width: 650px; }
+.eyebrow, .section-kicker { font-size: .72rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+.eyebrow { color: #f0c9bb; margin-bottom: 1.3rem; }
+h1, h2, .footer-brand { font-family: "Playfair Display", Georgia, serif; font-weight: 500; line-height: 1.12; }
+h1 { font-size: clamp(3.5rem, 8vw, 7rem); letter-spacing: -.045em; }
+h1 span { color: #e8b9a9; }
+.hero-copy { max-width: 430px; margin: 1.5rem 0 2rem; color: #f5eee8; font-size: 1.1rem; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 1.4rem; min-height: 52px; padding: .85rem 1.35rem; border: 0; border-radius: 2px; font-weight: 700; cursor: pointer; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-light { background: var(--paper); color: var(--ink); }
+.button-dark { width: 100%; background: var(--ink); color: white; }
+.button-dark:hover { background: var(--rose-dark); color: white; }
+.scroll-cue { position: absolute; bottom: 28px; left: clamp(24px, 11vw, 160px); color: #fff; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+.scroll-cue span { margin-left: 12px; color: #e8b9a9; }
+.section { grid-column: 1 / -1; padding: clamp(64px, 9vw, 125px) clamp(24px, 9vw, 130px); }
+.about-section { grid-area: about; display: grid; grid-template-columns: minmax(220px, .8fr) 1.2fr; align-items: center; gap: clamp(35px, 8vw, 115px); background: var(--paper); }
+.section-kicker { grid-column: 1 / -1; color: var(--rose-dark); margin-bottom: 1.4rem; }
+#ownerPic { width: 100%; max-width: 390px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 48% 48% 4px 4px; }
+.about-copy h2, .services-section h2, .work-section h2, .contact-intro h2 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); }
+.about-copy h2 em { color: var(--rose-dark); font-weight: 500; }
+.about-copy p { max-width: 650px; margin-top: 1.2rem; color: var(--muted); }
+.text-link { display: inline-block; margin-top: 1.8rem; padding-bottom: .35rem; border-bottom: 1px solid var(--rose-dark); font-weight: 700; }
+.services-section { grid-area: services; background: #e9ded2; }
+.services-section h2, .work-section h2 { max-width: 700px; margin-bottom: 2.5rem; }
+.service-list { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.service-list div { padding: 1.4rem 1rem 1.4rem 0; border-bottom: 1px solid var(--line); }
+.service-list span { color: var(--rose-dark); font-size: .75rem; font-weight: 700; }
+.service-list p { margin-top: .7rem; font-family: "Playfair Display", Georgia, serif; font-size: 1.25rem; }
+.skill-icons { display: flex; gap: 1.2rem; margin-top: 2.5rem; color: var(--rose-dark); font-size: 1.8rem; }
+.work-section { grid-area: work; background: var(--paper); }
+.work-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.workCard { min-height: 340px; display: flex; align-items: end; overflow: hidden; padding: 18px; border-radius: 3px; background-position: center; background-size: cover; }
+.workCard:nth-child(1) { background-image: linear-gradient(0deg,#17151399,transparent 60%),url("../assets/images/hairstyle1.png"); }
+.workCard:nth-child(2) { background-image: linear-gradient(0deg,#17151399,transparent 60%),url("../assets/images/hairstyle2.png"); }
+.workCard:nth-child(3) { background-image: linear-gradient(0deg,#17151399,transparent 60%),url("../assets/images/hairstyle3.png"); }
+.workCard:nth-child(4) { background-image: linear-gradient(0deg,#17151399,transparent 60%),url("../assets/images/hairstyle4.png"); }
+.workCard h3 { color: white; font-family: "Playfair Display", Georgia, serif; font-size: 1.35rem; font-weight: 500; }
+.contact-section { grid-area: contact; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 8vw, 110px); background: #e9ded2; }
+.contact-intro p { max-width: 420px; margin-top: 1.3rem; color: var(--muted); }
+.contactForm { width: 100%; max-width: 600px; margin: 0 auto; padding: clamp(22px, 4vw, 42px); background: var(--paper); border-radius: 4px; box-shadow: 0 15px 45px #32271c12; }
+.contactForm label { display: block; margin: 1rem 0 .35rem; font-size: .85rem; font-weight: 700; }
+.contactForm label span { color: var(--muted); font-weight: 400; }
+.contactForm input, .contactForm select, .contactForm textarea { width: 100%; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: #fff; color: var(--ink); }
+.contactForm input:focus, .contactForm select:focus, .contactForm textarea:focus { outline: 2px solid var(--rose); outline-offset: 2px; }
+.contactForm textarea { resize: vertical; }
+.contactForm button { margin-top: 1.2rem; }
+.site-footer { grid-area: footer; display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; align-items: center; padding: 45px clamp(24px, 9vw, 130px); background: var(--ink); color: #f7f4ed; }
+.footer-brand { font-size: 1.8rem; }
+.footer-brand span { color: #e8b9a9; }
+.site-footer p { color: #c7c0b6; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1.3rem; justify-content: end; }
+.footer-links a { color: #f7f4ed; font-size: .9rem; }
+.site-footer small { grid-column: 1 / -1; padding-top: 1.2rem; border-top: 1px solid #ffffff25; color: #c7c0b6; }
+#topBtn { position: fixed; z-index: 20; right: 24px; bottom: 22px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: white; box-shadow: 0 4px 16px #0003; }
+@media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, 1fr); } .service-list { grid-template-columns: repeat(2, 1fr); } .contact-section { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .hero { min-height: 700px; padding-top: 130px; } .about-section { grid-template-columns: 1fr; } #ownerPic { max-width: 280px; } .work-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .workCard { min-height: 230px; padding: 12px; } .workCard h3 { font-size: 1rem; } .site-footer { grid-template-columns: 1fr; } .footer-links { justify-content: start; } .site-footer small { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
